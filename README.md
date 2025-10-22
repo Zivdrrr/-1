@@ -2,7 +2,7 @@ class GameCharacter:
     def __init__(self, name, health, attack_power, defense):
         self.name = name
         self.health = health
-        self.max_health = health  # запам'ятовуємо максимальне здоров'я
+        self.max_health = health 
         self.attack_power = attack_power
         self.level = 1
         self.defense = defense
@@ -12,7 +12,6 @@ class GameCharacter:
         target.take_damage(self.attack_power)
 
     def take_damage(self, damage):
-        # враховуємо захист
         actual_damage = max(damage - self.defense, 0)
         self.health -= actual_damage
         if self.health < 0:
