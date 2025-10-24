@@ -7,25 +7,25 @@ class GameCharacter:
         self.level = 1
         self.defense = defense
 
-    def attack(self, target):
+def attack(self, target):
         print(f"{self.name} атакує {target.name} з силою {self.attack_power}!")
         target.take_damage(self.attack_power)
 
-    def take_damage(self, damage):
+def take_damage(self, damage):
         actual_damage = max(damage - self.defense, 0)
         self.health -= actual_damage
         if self.health < 0:
             self.health = 0
-        print(f"{self.name} отримав {actual_damage} пошкоджень. "
+    print(f"{self.name} отримав {actual_damage} пошкоджень. "
               f"Здоров'я: {self.health}/{self.max_health}")
 
-        if self.health == 0:
+if self.health == 0:
             print(f"{self.name} помер!")
 
-    def is_alive(self):
+def is_alive(self):
         return self.health > 0
 
-    def level_up(self):
+def level_up(self):
         self.level += 1
         self.max_health += 10
         self.health = self.max_health  
@@ -33,7 +33,7 @@ class GameCharacter:
         self.defense += 2
         print(f"{self.name} піднявся до {self.level} рівня!")
 
-    def get_info(self):
+def get_info(self):
         status = "живий" if self.is_alive() else "мертвий"
         print(f"Персонаж: {self.name} ({status})")
         print(f"Рівень: {self.level}")
